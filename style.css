@@ -5,7 +5,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     color: #2e2e2e;
-    letter-spacing: -1.6px;
     margin: 0;
     font-weight: 500;
     line-height: 150%;
@@ -53,7 +52,6 @@ p {
     font-size: 18px;
     font-weight: 500;
     line-height: 150%;
-    letter-spacing: 0px;
 }
 
 @media (max-width: 676px) {
@@ -83,10 +81,6 @@ img {
 
 a {
     color: #044071;
-}
-
-.button-next, .button-prev {
-    cursor: pointer;
 }
 
 .container {
@@ -410,7 +404,6 @@ a {
     }
 
     .header__nav-list {
-        transition: transform 0.3s linear;
         transform: translateX(-100%);
     }
 
@@ -551,6 +544,19 @@ padding-right: 0px;
     position: relative;
     clip-path: polygon(0 0, calc(100% - 27px) 0px, 100% 22.5px, 100% 100%, 27px 100%, 0px calc(100% - 22.5px));
     cursor: pointer;
+    transition: background-color .3s ease-in-out,color .3s ease-in-out;
+}
+
+.button-next,.button-prev {
+    height: 63px;
+    width: 63px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.button-next:hover rect,
+.button-prev:hover rect {
+    fill: #e8ac14; 
 }
 
 @media (max-width: 767px) {
@@ -851,6 +857,10 @@ padding-right: 0px;
     padding: 40px 35px 0px 32px;
 }
 
+.benefits__text {
+    font-size: 16px;
+}
+
 .benefits__list {
     padding: 0px 35px 0px 32px;
     list-style-type: none;
@@ -864,6 +874,8 @@ padding-right: 0px;
 
 .benefits__heading {
     margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 150%;
 }
 
 .benefits__heading::before {
@@ -1091,6 +1103,16 @@ padding-right: 0px;
     margin-bottom: 16px;
     border-bottom: solid 2px #044071;
     width: max-content;
+}
+
+.commercial {
+    margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+    .commercial {
+        margin-bottom: 50px;       
+    }
 }
 
 .commercial__content {
@@ -1361,8 +1383,6 @@ padding-right: 0px;
         flex-direction: row-reverse;
         justify-content: space-between;
         top: calc(50% - 31.5px + 44px);
-        z-index: 1;
-        margin-bottom: 32px;
     }
 }
 
@@ -1380,7 +1400,6 @@ padding-right: 0px;
     .projects__buttons-block {
         justify-content: center;
         gap: 12px;
-        bottom: 151px;
         align-items: flex-end;
         flex-direction: row-reverse;
         display: flex;
@@ -1398,9 +1417,6 @@ padding-right: 0px;
 }
 
 @media (max-width: 767px) {
-    .projects__buttons-block {
-        bottom: 133px;
-    }
     .projects__buttons-block + .button-white {
         display: block;
     }
@@ -1505,9 +1521,16 @@ padding-right: 0px;
     
 }
 
+.projects__image {
+    transition: height 0.3s ease-in-out;
+}
+
 @media (min-width: 992px) {
     .projects__container {
         clip-path: polygon(0 0, calc(100% - 48px) 0px, 100% 40px, 100% 100%, 48px 100%, 0px calc(100% - 40px));
+    }
+    .projects__image:hover {
+        height: 110%;
     }
 }
 
@@ -1554,16 +1577,6 @@ padding-right: 0px;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.button-next,.button-prev {
-    height: 63px;
-    width: 63px;
-}
-
-.button-next:hover rect,
-.button-prev:hover rect {
-  fill: #e8ac14; 
 }
 
 .white-border:hover {
@@ -1631,7 +1644,6 @@ padding-right: 0px;
     height: 100%;
     width: 100%;
     object-fit: cover;
-    z-index: 1;
 }
 
 .whyus__video-bg::after {
@@ -1993,6 +2005,10 @@ padding-right: 0px;
 }
 
 .form__field-block {
+    height: 66px;
+}
+
+.form__field-block {
     position: relative;
 }
 
@@ -2204,12 +2220,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-bottom: 10px;
     padding-left: 24px;
     cursor: pointer;
-}
-
-@media (max-width: 479px) {
-    .select-custom {
-        height: 58.24px;
-    }
 }
 
 .select-custom__heading {
