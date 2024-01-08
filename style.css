@@ -2005,10 +2005,6 @@ padding-right: 0px;
 }
 
 .form__field-block {
-    height: 66px;
-}
-
-.form__field-block {
     position: relative;
 }
 
@@ -2189,6 +2185,7 @@ input {
     padding-top: 32px;
     padding-bottom: 10px;
     padding-left: 24px;
+    height: 66px;
 }
 
 input,textarea:focus {
@@ -2220,6 +2217,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding-bottom: 10px;
     padding-left: 24px;
     cursor: pointer;
+    height: 66px;
 }
 
 .select-custom__heading {
@@ -2237,10 +2235,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
     right: 24px;
     height: 10px;
-    width: 10px;
-    top: calc(50% - 10px);
+    top: calc(50% - 2.5px);
     transition: transform 0.3s ease, top 0.3s ease;
     transform: rotate(0deg);
+    display: flex;
+    align-items: center;
 }
 
 .select-custom__heading.rotate::after {
