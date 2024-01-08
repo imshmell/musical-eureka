@@ -1,4 +1,3 @@
-
 // Menu start
 const hamburger = document.querySelector('.header__hamburger-wrapper');
 const nav = document.querySelector('.header__nav');
@@ -11,6 +10,8 @@ const backBtn = document.querySelectorAll('.nav__submenu-back');
 hamburger.addEventListener('click', function() {
 
   nav.classList.toggle('open');
+  // Чтобы не было анимации меню до клика:
+  navList.style.transition = 'transform 0.3s linear';
 
   if (nav.classList.contains('open')) {
     bodyScrollLock.disableBodyScroll(nav);
@@ -240,6 +241,7 @@ const btn = document.querySelector('.whyus__video-pb-block');
     btn.remove();
     video.play();
     video.setAttribute('controls', '');
+    video.style.zIndex = "1";
   });
 
 // Video end
