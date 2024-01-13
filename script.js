@@ -1,3 +1,4 @@
+
 // Menu start
 const hamburger = document.querySelector('.header__hamburger-wrapper');
 const nav = document.querySelector('.header__nav');
@@ -84,19 +85,19 @@ submenu.forEach(function(item, index) {
 let heroSwiperInit = false;
 let swiperhero;
 
-function swiperSet(_match_) {
-  const swiper_block = document.querySelector('.hero__cards-block');
-  const nextBtn = swiper_block.querySelector('.hero__buttons-block .hero__button-next');
-  const prevBtn = swiper_block.querySelector('.hero__buttons-block .hero__button-prev');
-  const swiper_wrapper = swiper_block.querySelector('.hero__card-list');
-  const swiper_slides = swiper_wrapper.querySelectorAll('li');
+function swiperSet(match) {
+  const swiperBlock = document.querySelector('.hero__cards-block');
+  const nextBtn = swiperBlock.querySelector('.hero__buttons-block .hero__button-next');
+  const prevBtn = swiperBlock.querySelector('.hero__buttons-block .hero__button-prev');
+  const swiperWrapper = swiperBlock.querySelector('.hero__card-list');
+  const swiperSlides = swiperWrapper.querySelectorAll('li');
 
-  if (_match_.matches && !heroSwiperInit) {
+  if (match.matches && !heroSwiperInit) {
     heroSwiperInit = true;
-    swiper_block.classList.add('swiper');
-    swiper_wrapper.classList.add('swiper-wrapper');
-    swiper_slides.forEach(_slide_ => _slide_.classList.add('swiper-slide'));
-    swiperhero = new Swiper(swiper_block, {
+    swiperBlock.classList.add('swiper');
+    swiperWrapper.classList.add('swiper-wrapper');
+    swiperSlides.forEach(slide => slide.classList.add('swiper-slide'));
+    swiperhero = new Swiper(swiperBlock, {
       speed: 900,
       slidesPerView: "auto",
       spaceBetween: 8,
@@ -108,10 +109,10 @@ function swiperSet(_match_) {
         slideRole: 'listitem',
       },
     });
-  } else if (!_match_.matches && swiperhero) {
-    swiper_block.classList.remove('swiper');
-    swiper_wrapper.classList.remove('swiper-wrapper');
-    swiper_slides.forEach(_slide_ => _slide_.classList.remove('swiper-slide'));
+  } else if (!match.matches && swiperhero) {
+    swiperBlock.classList.remove('swiper');
+    swiperWrapper.classList.remove('swiper-wrapper');
+    swiperSlides.forEach(slide => slide.classList.remove('swiper-slide'));
     swiperhero.destroy();
     heroSwiperInit = false;
   }
@@ -131,51 +132,50 @@ swiperFunc();
 
 const swiperOptions = new Swiper(".options__wrapper", {
   speed: 900,
-  slidesPerView: 1,
-    spaceBetween: 24,
-    autoHeight: true,
-    navigation: {
-      nextEl: ".button-next.options__button-next",
-      prevEl: ".button-prev.options__button-prev",
+  autoHeight: true,
+  spaceBetween: 24,
+  navigation: {
+    nextEl: ".button-next.options__button-next",
+    prevEl: ".button-prev.options__button-prev",
+  },
+  a11y:{
+    slideRole: 'listitem',
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 2,
+      autoHeight: false,
     },
-    a11y:{
-      slideRole: 'listitem',
+    1280: {
+      slidesPerView: 3,
+      autoHeight: false,
     },
-    breakpoints: {
-    	992: {
-        slidesPerView: 2,
-        spaceBetween: 24,
-      },
-      1280: {
-        slidesPerView: 3,
-        spaceBetween: 24,
-      },
-    }
+  }
 });
                             
 // Options swiper end
                             
                             
-const solutionsitems = document.querySelectorAll('.solutions__small-blocks');
+const solutionsItems = document.querySelectorAll('.solutions__list-item:nth-child(2), .solutions__list-item:nth-child(3)');
 
-solutionsitems.forEach(_item_ => {
-  _item_.addEventListener('mouseover', () => {
+solutionsItems.forEach(item => {
+  item.addEventListener('mouseover', () => {
     if (window.innerWidth > 1279) {
-      const text = _item_.querySelector('.solutions__content-text');
+      const text = item.querySelector('.solutions__content-text');
       text.style.display = 'block';
 
-      const content = _item_.querySelector('.solutions__content');
+      const content = item.querySelector('.solutions__content');
       const textHeight = text.offsetHeight;
       content.style.transform = `translateY(-${textHeight}px)`;
     }
   });
 
-  _item_.addEventListener('mouseout', () => {
+  item.addEventListener('mouseout', () => {
     if (window.innerWidth > 1279) {
-      const text = _item_.querySelector('.solutions__content-text');
+      const text = item.querySelector('.solutions__content-text');
       text.style.display = 'none';
 
-      const content = _item_.querySelector('.solutions__content');
+      const content = item.querySelector('.solutions__content');
       content.style.transform = 'translateY(0)';
     }
   });
