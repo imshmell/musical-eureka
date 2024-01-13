@@ -1254,6 +1254,10 @@ padding-right: 0px;
     }
     .commercial__image-block {
         margin-bottom: 32px;
+        width: calc(100% + 96px);
+        margin-left: -48px;
+        height: 309px;
+        
     }
 
 }
