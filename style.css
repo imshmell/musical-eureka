@@ -88,6 +88,9 @@ a {
     width: 100%;
     margin: 0 auto;
     padding: 0 72px;
+    /* position: relative; */
+}
+section {
     position: relative;
 }
 
@@ -944,7 +947,7 @@ padding-right: 0px;
         font-size: 14px;
     }
     .options__list-item {
-        margin-bottom: 32px;
+        padding-bottom: 32px;
     }
 
 }
@@ -967,7 +970,7 @@ padding-right: 0px;
         display: none;
     }
     .options__list-item {
-        margin-bottom: 24px;
+        padding-bottom: 24px;
     }
 }
 
@@ -982,6 +985,10 @@ padding-right: 0px;
     background-color: #fafafa;
     padding-top: 100px;
     padding-bottom: 80px;
+    position: relative;
+}
+
+.solutions-container {
     position: relative;
 }
 
@@ -1191,9 +1198,13 @@ padding-right: 0px;
     margin-bottom: 100px;
 }
 
+.commercial-container {
+    /* padding: 0; */
+}
+
 @media (max-width: 767px) {
     .commercial {
-        margin-bottom: 50px;       
+    margin-bottom: 50px;
     }
 }
 
@@ -1215,14 +1226,14 @@ padding-right: 0px;
 }
 
 @media (min-width: 992px) {
-    .commercial>.container::after {
+    .commercial__image-block::after {
         content: "";
         background: linear-gradient(105deg, #044071 ,rgba(4,64,113,.7) 39%,rgba(4,64,113,0) 57%);
         position: absolute;
         top: 0;
         bottom: 0;
-        left: 72px;
-        right: 72px;
+        left: 0;
+        right: 0;
     }
     .commercial__image-block {
             position: absolute;
@@ -1247,12 +1258,6 @@ padding-right: 0px;
     }
 }
 
-@media (max-width: 767px) {
-    .commercial__image-block {
-        width: calc(100% + 64px);
-    }
-)
-
 @media (max-width: 991px) {
     .commercial__heading {
         font-size: 28px;
@@ -1269,10 +1274,16 @@ padding-right: 0px;
 
 }
 
+@media (max-width: 767px) {
+    .commercial__image-block {
+        width: calc(100% + 64px);
+    }
+}
+
 @media (max-width: 1440px) {
-    .commercial>.container::after {
-        right: 48px;
-        left: 48px;
+    .commercial__image-block::after {
+        right: 0;
+        left: 0;
     }
 }
 
@@ -1439,6 +1450,10 @@ padding-right: 0px;
     text-align: center;
 }
 
+.projects-container {
+    position: relative;
+}
+
 @media (max-width: 767px) {
     .projects {
         padding-top: 50px;
@@ -1466,7 +1481,6 @@ padding-right: 0px;
         position: absolute;
         left: 25px;
         right: 25px;
-        top: 0px;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
