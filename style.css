@@ -927,13 +927,19 @@ padding-right: 0px;
 
 .benefits__more {
     margin-left: 24px;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 @media (min-width: 1280px) {
     .benefits__more {
         display: none;
     }
+}
+
+@media (max-width: 1279px) {
+   .benefits__more {
+        margin-bottom: 24px;
+    } 
 }
 
 @media (max-width: 991px) {
