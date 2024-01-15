@@ -1247,6 +1247,12 @@ padding-right: 0px;
     }
 }
 
+@media (max-width: 767px) {
+    .commercial__image-block {
+        width: calc(100% + 64px);
+    }
+)
+
 @media (max-width: 991px) {
     .commercial__heading {
         font-size: 28px;
@@ -1258,8 +1264,7 @@ padding-right: 0px;
         margin-bottom: 32px;
         width: calc(100% + 96px);
         margin-left: -48px;
-        height: 309px;
-        
+        height: 309px; 
     }
 
 }
