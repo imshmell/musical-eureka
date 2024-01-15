@@ -949,12 +949,6 @@ padding-right: 0px;
 
 }
 
-@media (max-width: 1279px) {
-    .options__list-item {
-        padding-bottom: 24px;
-    }
-}
-
 .options__best {
     background-color: #044071;
     color: white;
