@@ -928,6 +928,7 @@ padding-right: 0px;
 .benefits__more {
     margin-left: 24px;
     text-decoration: none;
+    margin-bottom: 24px;
 }
 
 @media (min-width: 1280px) {
@@ -966,9 +967,6 @@ padding-right: 0px;
 @media (max-width: 1279px) {
     .options__button {
         display: none;
-    }
-    .benefits__more {
-        margin-bottom: 24px;
     }
 }
 
