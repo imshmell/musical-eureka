@@ -663,7 +663,7 @@ padding-right: 0px;
         max-width: 100%;
     }
     .hero__card-list {
-        grid-template-columns: 235px 235px 235px;
+        grid-template-columns: 225px 225px 225px;
         grid-template-rows: 158px 158px;
     }
     li.swiper-slide {
@@ -1357,8 +1357,13 @@ padding-right: 0px;
     }
 }
 
+.projects__container .button,.cta-container .button {
+    border-color: white;
+}
+
+
 @media (max-width: 767px) {
-    .button-block {
+    .projects__container .button {
         width: 100%;
         text-align: center;
     }
@@ -1714,6 +1719,17 @@ padding-right: 0px;
 .white-border::after {
     clip-path: polygon(calc(100% - 27px) 0px, calc(100% - 25px) 0px, 100% 20.5px, 100% 22.5px);
 }
+
+@media (max-width: 767px) {
+    .white-border::before {
+        clip-path: polygon(0px calc(100% - 15px), 21px 100%, 18px 100%, 0px calc(100% - 13.5px));
+    }
+    
+    .white-border::after {
+        clip-path: polygon(calc(100% - 20px) 0px, calc(100% - 18px) 0px, 100% 12.5px, 100% 14.5px);
+    }
+}
+
 
 .whyus-container {
     padding-top: 100px;
